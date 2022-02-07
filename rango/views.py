@@ -2,10 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from rango.models import Category
 from rango.models import Page
-from rango.forms import CategoryForm
+from rango.forms import CategoryForm, PageForm
 from django.shortcuts import redirect
 from django.urls import reverse
-from rango.forms import PageForm
+
 
 
 def index(request):
@@ -58,10 +58,10 @@ def add_page(request, category_name_slug):
     except Category.DoesNotExist:
         category = None
 
+    form = PageForm()
+
     if category is None:
         return redirect('/rango/')
-
-    form = PageForm()
 
     if request.method == 'POST':
         form = PageForm(request.POST)
