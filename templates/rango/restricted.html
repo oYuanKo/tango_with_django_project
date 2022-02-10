@@ -2,13 +2,13 @@
 {% load staticfiles %}
 
 {% block title_block %}
-    Restricted Page
+Restricted Page
 {% endblock %}
 
 {% block body_block %}
 <h1>Restricted Page</h1>
 <div>
-    You are logged in, so you can see this page! If you weren't logged in, you wouldn't be able to!
+    You are logged in, so you can see this page. If you weren't logged in, you wouldn't be able to.
     <img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango"/>
 </div>
 {% endblock %}
